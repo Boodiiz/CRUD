@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link rel="stylesheet" href="./Css/all.min.css">
+  <link rel="stylesheet" href="./Css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Css/style.css">
+  <title>Application</title>
+  <link rel="icon" href="./images/roundd.jpg" />
+</head>
+<body>
+  <div class="d-flex w-25 mx-auto mt-4 flex-column border border-5 rounded-3 modify justify-content-center align-items-center">
+    <img class="logo-img" src="./images/logoo.jpg" alt="logo">
+    <h1>Tech Market</h1>
+  </div>
+  <div class="w-75 mx-auto py-5">
+    <div class="form-floating mb-3">
+      <input oninput="isValidProductField(productNameRegex,this)" type="text" class="form-control border-0 border-bottom rounded-0" id="productName" placeholder="name@example.com">
+      <p class="text-danger d-none pt-2">Product name must start with capital letter followed by at least one char</p>
+      <label for="productName">Product Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input oninput="isValidProductField(productPriceRegex,this)" type="number" class="form-control border-0 border-bottom rounded-0" id="productPrice" placeholder="name@example.com">
+      <p class="text-danger d-none pt-2">Product price must be greater than zero</p>
+      <label for="productPrice">Product Price</label>
+    </div>
+
+    <div class="form-floating">
+      <select onchange="isValidProductField(productCategoryRegex,this)" class="form-select rounded-0 border-0 border-bottom" id="productCategory" aria-label="Floating label select example">
+        <option id="defaultSelection" selected disabled hidden>Choose Product Category</option>
+        <option>Mobile Phone</option>
+        <option>Laptop</option>
+        <option>Printer</option>
+        <option>Camera</option>
+        <option>TV</option>
+      </select>
+      <p class="text-danger d-none pt-2">Please choose product category</p>
+      <label for="productCategory">Product Category</label>
+    </div>
+
+
+    <div class="form-floating mb-3 mt-2">
+      <textarea oninput="isValidProductField(productDescriptionRegex,this)" class="form-control border-0 border-bottom rounded-0" id="productDescription" placeholder="name@example.com"></textarea>
+      <p class="text-danger d-none pt-2">Product description must be at leat 3 characters</p>
+      <label for="productDescriotion">Product Description</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input onchange="isValidProductImage()" type="file" class="form-control border-0 border-bottom rounded-0" id="productImage" placeholder="name@example.com">
+      <p class="text-danger d-none pt-2">Please choose product image</p>
+      <label for="productImage">Product Image</label>
+    </div>
+
+    <button id="addProductButton" onclick="addProduct()" class="btn btn-info text-light my-2 d-block">Add Product</button>
+    <button id="UpdateProductButton" onclick="updateProduct()" class="btn btn-danger text-white my-2 d-none">Update Product</button>
+  </div>
+  <div class="container">
+    <input oninput="searchByProductName(this.value)" type="search" placeholder="Search By Product Name" class="form-control mb-4" name="" id="">
+    <div id="containerProducts" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    </div>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/JS.js"></script>
+</body>
+</html>

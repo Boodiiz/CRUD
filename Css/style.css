@@ -1,0 +1,44 @@
+
+
+
+
+.form-control:focus,
+.form-select:focus
+{
+  box-shadow: none;
+  border-color: darkcyan !important;
+}
+
+.fa-trash-can:hover
+{
+  animation: fa-shake 2s infinite;
+}
+
+.product-image-container
+{
+  height: 150px;
+  overflow: hidden;
+}
+
+.form-control.is-invalid,
+.form-control.is-valid
+{
+  box-shadow: none !important;
+  border-bottom: 3px solid green !important;
+  
+}
+.form-floating>.form-control:focus
+{
+  padding-bottom: 0 !important;
+}
+.form-select.is-valid:focus
+{
+  box-shadow: none;
+}
+
+.logo-img
+{
+  width: 200px;
+  padding-top: 10px;
+}
+
